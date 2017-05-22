@@ -1,8 +1,10 @@
 # Config Notes
 
+This problem demonstrates a potential bug in the dotenv gem or ActionMailer. I believe it's probably a bug with the dotenv gem.
+
 Things to note:
 
-* .env.development is setting up some ENV variable for the SMTP server. The config assumes you're using the mailcatcher gem locally to catch sent emails.
+* .env.development is setting up some ENV variables for the SMTP server. The config assumes you're using the mailcatcher gem locally to catch sent emails.
 * config/initializers/smtp.rb is setting up Rails.application.config.action_mailer.smtp_settings to use those ENV variables
 * We have an interceptor setup in app/mailers/sent_email_interceptor.rb, as defined in the [ActionMailer docs](http://guides.rubyonrails.org/action_mailer_basics.html#intercepting-emails).
 * bin/rake email:try_send can be used to send the new user email
